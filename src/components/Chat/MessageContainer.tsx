@@ -54,9 +54,9 @@ export default function ({
       }}
     >
       <div id="message-container-img" class="px-1em">
-        <Show when={!store.messageList.length}>
+        {/* <Show when={!store.messageList.length}>
           <MessageItem hiddenAction={true} message={defaultMessage} />
-        </Show>
+        </Show> */}
         <TransitionGroup name="transition-group">
           <For each={store.messageList}>
             {(message, index) => (
@@ -75,32 +75,6 @@ export default function ({
       >
         <div class="flex items-center px-1em text-0.8em">
           <hr class="flex-1 border-slate/40" />
-          <Show
-            when={store.inputContentToken}
-            fallback={
-              <span class="mx-1 text-slate/40">
-                {`有效上下文 Tokens : ${shownTokens(
-                  store.contextToken
-                )}/$${store.contextToken$.toFixed(4)}`}
-              </span>
-            }
-          >
-            <span class="mx-1 text-slate/40">
-              {`有效上下文+提问 Tokens : ${shownTokens(
-                store.contextToken + store.inputContentToken
-              )}(`}
-              <span
-                classList={{
-                  "text-red-500": store.remainingToken < 0
-                }}
-              >
-                {shownTokens(store.remainingToken)}
-              </span>
-              {`)/$${(store.contextToken$ + store.inputContentToken$).toFixed(
-                4
-              )}`}
-            </span>
-          </Show>
           <hr class="flex-1  border-slate/30" />
         </div>
       </Show>

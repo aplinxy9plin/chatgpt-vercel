@@ -41,6 +41,8 @@
     "markdown-it-highlightjs": "^4.0.1",
     "markdown-it-katex": "^2.0.3",
     "markdown-it-kbd": "^2.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "solid-js": "^1.8.15",
     "solid-start": "^0.3.10",
     "solid-transition-group": "^0.2.3",

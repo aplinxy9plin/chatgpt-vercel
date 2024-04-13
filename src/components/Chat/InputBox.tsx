@@ -38,7 +38,7 @@ export default function ({
   onMount(() => {
     import("~/utils/parse").then(({ parsePrompts }) => {
       FZFData.promptOptions = parsePrompts().map(
-        k => ({ title: k.desc, desc: k.detail } as Option)
+        k => ({ title: k.desc, desc: k.detail }) as Option
       )
       FZFData.fzfPrompts = new Fzf(FZFData.promptOptions, {
         selector: k => `${k.title}\n${k.desc}`
@@ -153,32 +153,12 @@ export default function ({
           opacity: width() === "init" ? 0 : 100
         }}
       >
-        <Show when={!store.loading && !candidateOptions().length}>
-          <SettingAction />
-        </Show>
-        <Show
-          when={!store.loading}
-          fallback={
-            <div
-              class="animate-gradient-border cursor-pointer dark:bg-#292B31/90 bg-#E7EBF0/80 h-3em flex items-center justify-center"
-              onClick={stopStreamFetch}
-            >
-              <span class="dark:text-slate text-slate-7">
-                AI 正在思考 / {shownTokens(store.currentMessageToken)} / $
-                {store.currentMessageToken$.toFixed(4)}
-              </span>
-            </div>
-          }
-        >
-          <SlashSelector
-            options={candidateOptions()}
-            select={selectOption}
-          ></SlashSelector>
+        <Show when={!store.loading}>
           <div class="flex items-end relative">
             <textarea
               ref={el => setStore("inputRef", el)}
               id="input"
-              placeholder="与 ta 对话吧"
+              placeholder="Сообщение"
               autocomplete="off"
               autocapitalize="off"
               autofocus={false}
