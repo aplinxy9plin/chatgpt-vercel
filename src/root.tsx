@@ -40,7 +40,7 @@ export default function Root() {
         ) : (
           ""
         )}
-        <Meta name="theme-color" content="#f6f8fa" />
+        <Meta name="theme-color" content="#ffffff" />
       </Head>
       <Body>
         <Suspense>

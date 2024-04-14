@@ -60,7 +60,7 @@ export default defineConfig({
         name: "ChatGPT",
         lang: "zh-cn",
         short_name: "ChatGPT",
-        background_color: "#f6f8fa",
+        background_color: "#fff",
         icons: [
           {
             src: "192.png",

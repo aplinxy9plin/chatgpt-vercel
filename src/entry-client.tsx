@@ -3,9 +3,9 @@ import { LocalStorageKey } from "~/types"
 
 const e = localStorage.getItem(LocalStorageKey.THEME) || ""
 const a = window.matchMedia("(prefers-color-scheme: dark)").matches
-if (!e || e === "auto" ? a : e === "dark") {
-  document.documentElement.classList.add("dark")
-}
+// if (!e || e === "auto" ? a : e === "dark") {
+//   document.documentElement.classList.add("dark")
+// }
 
 if (!Array.prototype.at) {
   Array.prototype.at = function (index) {

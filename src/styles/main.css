@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 }
 
 :root {
-  --c-bg: #f6f8fa;
+  --c-bg: #ffffff;
   --c-scroll-thumb: #b9b9b9;
   --c-text-slate: rgb(148, 163, 184);
 }
